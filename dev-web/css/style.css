@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f6f6f6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.nav{
+    z-index: 9999;
+    width: 100%;
+    height: 80px;
+    color: #f3f3f3;
+    background-color:#630f0f;
+    display: flex;
+    
+    gap: 100px;
+   animation: vienedagiu 2s linear;
+   position: relative;
+}
+@keyframes vienedagiu{
+    0%{ transform: translateY(-200px)}
+    100%{ transform:translateY(0)}
+}
+.nav ul{
+    list-style-type: none;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 50px;
+     width: 70%;
+    margin: auto;
+    height: 100%;
+    transform: translateY(50px);
+    padding: 25px 30px 0;
+   /*  opacity: 0; */
+   z-index: 998;
+    animation: appare 2s linear;
+}
+@keyframes appare{
+    0%{ opacity: 0;}
+    100%{opacity: 1;}
+}
+.nav ul li a{
+    font-size: 500;
+    font-size: 16px;
+    color: #630f0f;
+    text-transform: capitalize;
+    letter-spacing: .12rem;
+    text-decoration: none;
+    padding:  15px 0;
+    text-align: center;
+    position: relative;
+   
+}
+.nav  ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #630f0f;
+    transition: all .4s linear;
+}
+.nav ul li a:hover:before{
+    width: 100%;
+}
+.hamburger{
+    display: none;
+    gap: 5px;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+}
+.hamburger span{
+   display: block;
+   gap: 20px;
+   width: 60%;
+   height: 3px;
+   border-radius: 3px;
+   background-color: #f3f3f3;
+}
+.hero{
+    background: url('../img/img-dec.jpg') no-repeat center center/cover;
+    display: flex;
+    position: relative;
+   width: 100%;
+   height: calc(100vh - 80px);
+   
+    animation:heroanimation 20s linear  infinite forwards;
+}
+.hero .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #06060697;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes heroanimation{
+    0%{background-size: 120%;}
+    50%{
+        background-size: 100%;}
+    100%{ background-size: 120%;}
+}
+.overlay h1{
+    text-align: center;
+    font-size: 100px;
+    font-weight: 700;
+    color: #f3f3f3;
+    letter-spacing: .01rem;
+}
+.overlay h1 span {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeIn 0.5s forwards ;
+}
+.overlay h1 span:nth-child(2n){
+    color: #630f0f !important;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+overlay h1 span:nth-child(1) { animation-delay: 0,3s; }
+.overlay h1 span:nth-child(2) { animation-delay: 0.5s; }
+.overlay h1 span:nth-child(3) { animation-delay: 0.8s; }
+.overlay h1 span:nth-child(4) { animation-delay: 1s; }
+.overlay h1 span:nth-child(5) { animation-delay: 1.3s; }
+.overlay h1 span:nth-child(6) { animation-delay: 1.5s; }
+.overlay h1 span:nth-child(7) { animation-delay: 1.8s; }
+.overlay h1 span:nth-child(8) { animation-delay: 2s; }
+.overlay h1 span:nth-child(9) { animation-delay: 2.3s; }
+.overlay h1 span:nth-child(10) { animation-delay: 2.5s; }
+.overlay h1 span:nth-child(11) { animation-delay: 2.8s; }
+
+
+@media  screen and (max-width:768px){
+    .overlay h1{
+        font-size: 52px;
+    }
+    .nav{
+    flex-direction: column;
+    gap: 10px;
+    }
+    .nav #navlink{ 
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    left: -100%;
+    gap: 10px;
+    background:#f3f3f3;
+    height: 100vh;
+    width: 40%;
+    text-align: center;
+
+    }
+    .hamburger{ display: flex;}
+    .nav #navlink.active {
+    left: 0;
+  }
+
+  .nav ul li {
+    padding: 10px 0;
+  }
+} 
+    

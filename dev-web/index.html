@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">    
+    <title>My home</title>
+</head>
+<body>
+  <div class="nav">
+    <img src="" alt="Logo">
+    <ul id="navlink">
+    <li><a href="">home</a></li>
+    <li><a href="">chi siamo</a></li>
+    <li><a href="">servizi</a></li>
+    <li><a href="">contatti</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+<section class="hero">
+ <div class="overlay">
+  <h1> 
+    <span>D</span>
+    <span>E</span> 
+    <span>V</span>
+    <span>-</span>
+    <span>W</span>
+    <span>E</span>
+    <span>B</span>
+  </h1>
+ </div>
+</section>
+<script>
+  const toggle = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navlink');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
